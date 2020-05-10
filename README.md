@@ -1,2 +1,2 @@
-# 108Yo.ga
-www.108yo.ga
+# 99Yo.ga
+www.99yo.ga
