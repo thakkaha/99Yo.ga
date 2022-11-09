@@ -105,6 +105,8 @@ auth0.createAuth0Client({
   const profileElement = document.getElementById("profile");
 
   if (isAuthenticated) {
+  console.log(userProfile);
+  debugger;
     profileElement.style.display = "block";
     profileElement.innerHTML = `
             <p>${userProfile.name}</p>
