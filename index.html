@@ -81,12 +81,7 @@ auth0.createAuth0Client({
   }
 }).then(async (auth0Client) => {
   // Assumes a button with id "login" in the DOM
-  const loginButton = document.getElementById("login");
 
-  loginButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    auth0Client.loginWithRedirect();
-  });
 
   if (location.search.includes("state=") && 
       (location.search.includes("code=") || 
