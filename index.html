@@ -70,7 +70,7 @@ body{
 </div>
 <!--<h2>Keep watching! </h2>-->
 <!--<p>Days to Intl Yoga day 2018 (21st June) is:</p>-->
-    <button id="logout">out</button>
+    
 <div id="profile"></div>
     <script>
 auth0.createAuth0Client({
@@ -80,7 +80,6 @@ auth0.createAuth0Client({
     redirect_uri: window.location.origin
   }
 }).then(async (auth0Client) => {
-  // Assumes a button with id "login" in the DOM
 
 
   if (location.search.includes("state=") && 
@@ -90,13 +89,6 @@ auth0.createAuth0Client({
     window.history.replaceState({}, document.title, "/");
   }
 
-  // Assumes a button with id "logout" in the DOM
-  const logoutButton = document.getElementById("logout");
-
-  logoutButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    auth0Client.logout();
-  });
 
   const isAuthenticated = await auth0Client.isAuthenticated();
   const userProfile = await auth0Client.getUser();
@@ -114,7 +106,7 @@ auth0.createAuth0Client({
           `;
   } else {
   profileElement.style.display = "none";
-  logoutButton.style.display = "none";
+
   }
 });
     </script>
