@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <title>yo login</title>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    
+  </head>
+  <body>
+    <h1>svaagatam</h1>
+    <h2>---</h2>
+    <button id="login">in</button>
+    <button id="logout">out</button>
+    <div id="profile">who</div>
+    <script>
+auth0.createAuth0Client({
+  domain: "dev-dh04orol28atnr8w.us.auth0.com",
+  clientId: "JofbneWuHhQsYJk0e4VNOAIVe0VfL8OZ",
+  authorizationParams: {
+    redirect_uri: window.location.origin
+  }
+}).then(async (auth0Client) => {
+  // Assumes a button with id "login" in the DOM
+  const loginButton = document.getElementById("login");
+
+  loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth0Client.loginWithRedirect();
+  });
+
+  if (location.search.includes("state=") && 
+      (location.search.includes("code=") || 
+      location.search.includes("error="))) {
+    await auth0Client.handleRedirectCallback();
+    window.history.replaceState({}, document.title, "/");
+  }
+
+  // Assumes a button with id "logout" in the DOM
+  const logoutButton = document.getElementById("logout");
+
+  logoutButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    auth0Client.logout();
+  });
+
+  const isAuthenticated = await auth0Client.isAuthenticated();
+  const userProfile = await auth0Client.getUser();
+
+  // Assumes an element with id "profile" in the DOM
+  const profileElement = document.getElementById("profile");
+
+  if (isAuthenticated) {
+    profileElement.style.display = "block";
+    profileElement.innerHTML = `
+            <p>${userProfile.name}</p>
+            <img src="${userProfile.picture}" />
+          `;
+  } else {
+    profileElement.style.display = "none";
+  }
+});
+    </script>
+  </body>
+</html>
