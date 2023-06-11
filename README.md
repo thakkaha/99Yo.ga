@@ -1,2 +1,2 @@
-# 99Yo.ga
-www.99yo.ga
+# 1.ga
+www.1yo.ga
