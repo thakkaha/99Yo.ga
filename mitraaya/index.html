@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic'>-->
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ॐ मित्राय नमः</title>
+<meta name="description" content="ॐ सूर्याय नमः">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://pdrp.ml/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ॐ मित्राय नमः">
+<meta property="og:description" content="जयतु संस्कृतम्">
+<meta property="og:image" content="">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="pdrp.ml">
+<meta property="twitter:url" content="https://pdrp.ml/">
+<meta name="twitter:title" content="ॐ मित्राय नमः">
+<meta name="twitter:description" content="जयतु संस्कृतम्">
+<meta name="twitter:image" content="">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	
+    <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+    <script type="text/javascript" src='js/table3.js'></script>
+    <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h2 style="color:Tomato">ॐ मित्राय नमः</h2>
+<a class="mantra" href="om.png" style="float:left" target="mantra">मन्त्रः text</a>
+<a class="mantra" href="om.mp3" style="float:right" target="mantra">मन्त्रः audio</a>
+    
+  <div id="calendar-goes-here"></div>
+<small>Add your SNY counts <a href="https://forms.gle/NcWjLXBCgV12M3uv8" target="_blank">here</a>. </small>
+
+  </body>
+    <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+      //var URL = "1G9o_2WF9TlCkh3CzdmQLGLdj3Q-erwaXrlPVTHo28WQ";
+	  var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vStvpW6n60Z6SkRuy3zLrdNPzL8BkTTP66Ld7JOEygkVQW8y9xpqNi4sU-mdv48kMtxHP_I5Hp2Bo0r/pub?gid=0&single=true&output=csv";
+	  Papa.parse(lnk, {
+          download: true,
+          header: true,
+          complete: generateCalendar
+		  })
+    })
+  </script>
+</html>
