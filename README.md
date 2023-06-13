@@ -1,2 +1,2 @@
-# 1.ga
+# 1yo.ga
 www.1yo.ga
