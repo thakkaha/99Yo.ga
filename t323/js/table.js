@@ -3,7 +3,7 @@ var weekdays   = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 weekdays = ["सोमवासरः", "मङ्गलवासरः", "बुधवासरः", "गुरुवासरः", "शुक्रवासरः", "शनिवासरः", "रविवासरः"]
 var symbols = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९','१०', '११', '१२', '१३', '१४', '१५', '१६', '१७', '१८', '१९','२०', '२१', '२२', '२३', '२४', '२५', '२६', '२७', '२८', '२९','३०','३१'];
 const urlParams = new URLSearchParams(window.location.search);
-var o = urlParams.get('oks');
+var o = urlParams.get('sbc');
 if (o!="aam")
 {
 var today  = new Date()
