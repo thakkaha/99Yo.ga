@@ -2,36 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>संस्कृतम् Sep-Dec 2023</title>
+    <title>JSQaH</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	 <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
     <script type="text/javascript" src="js/tabletop1.3.4.js"></script>
     <script type="text/javascript" src='js/sheetsee.js'></script>
     <script type="text/javascript" src='js/table.js'></script>
     <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
-    <h1>SB Canada <span style="color:Tomato">संस्कृतम् </span><a href=""> 2023</a></h1><h3> email - t323@samskritabharati.ca</h3>
-	<a class="mantra" href="d.png" style="float:left" target="mantra">ध्येय-मन्त्रः dhyeya-mantraH</a> <a class="mantra" style="float:right" href="s.png" target="mantra">शान्ति-मन्त्रः shaanti-mantraH</a>
-  <div id="calendar-goes-here"></div>
+    <h1>JSQaH <a href="https://1pt.co/jsq"> 2023</a></h1><h3>t.me/jsqah</h3>
+  <div id="jsqah"></div>
     <script type="text/javascript">
 	    document.addEventListener('DOMContentLoaded', function() {
-	  //var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEtQzCVrt0Oue2MTOAu6P86Dix11SoOG5RzucfgoDK-UJCoYYAsZZ2c1XM_q3jfWFMiu_DDDuov1T4/pub?gid=0&single=true&output=csv";
-    //lnk = "1qIF1xZ1lnZa_nAvdFpEWp_iUh_IVXdS4SxBny39JnVQ";
-    var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSEbB_PseUI4vd2mlQmq79fjs2MDyT06S_ZESybGHZRtJv1Zq9TgM8SfMhshjAmYmqE_1HGoOsakvuB/pub??gid=0&single=true&output=csv";
+    var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTOuJB_Wec6ReYBw7EkwxPTCkhdfIIZabbkF2SEBVPM3TpSX53Atzc2BCNwSkN9J8PwJ7NgiucmqZs4/pub??gid=0&single=true&output=csv";
 	  Papa.parse(lnk, {
           download: true,
           header: true,
-          complete: generateCalendar
+          complete: generateTxt
 		  })
     })
   </script>
 <script>
 $(document).ready(function() {
 $("h2").css("display","block");
-$("table").css("display","table");
-$("#cal-controls").css("display","none");   
 });
 </script>
   </body>
