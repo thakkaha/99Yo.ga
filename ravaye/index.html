@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        
+        <title>sUryanamaskAra - Sun Salutations</title>
+		
+	<link href="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"></script>
+	<script>
+$(document).on("pageshow","#history",function(){
+      var hist="";
+	  var total=0;count=0;
+	  $("#hist").html(hist);
+	  for (i = 0; i <localStorage.length; i++)
+	  {
+	   key = localStorage.key(i);
+if (key.indexOf("sny24")==0)
+{
+	   count = localStorage.getItem(key);
+	   hist = hist + "Count on " + key + " : " + count + "<br>";
+
+	   if (!isNaN(count))
+	   total = total + parseInt(count);
+	  }
+}
+	  $("#hist").append(hist);
+	  $("#histh1").html("<h3>SNY24 count so far : <b>"+total+"</b></h3>");
+});
+$(document).on("pagecreate","#entry",function(){
+  $("#submit").on("click",function(){
+    var d = new Date();
+	  var delim = "-";
+	var mon = parseInt(d.getMonth())+1;
+	  if (mon < 10) delim+="0";
+    var knam = "sny24" + delim + mon + "-" + d.getDate();
+    localStorage.setItem(knam,$("#snum").val());
+	$.mobile.navigate( "#history" );
+});
+});
+</script>
+    </head>
+    <body>
+        	<div data-role="page" id="mantras">
+		<div data-role="header" data-position="fixed">
+			
+			<div data-role="navbar" data-icon-plus>
+				<ul>
+					<li>
+					<a href="#" class="ui-btn-active ui-state-persist">Mantras</a>
+					</li>
+					<li>
+					<a href="#poses" data-transition="slide">Poses</a>
+					</li>
+					<li>
+					<a href="#entry" data-transition="slide">Record Today's Count</a>
+					</li>
+					<li>
+					<a href="#history" data-transition="slide">My Counts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div data-role="main" class="ui-main">
+			<h1>Mantras</h1>
+			
+						
+
+<div id="music" onclick="togglesound()" style="align:centre"><!--<button>Sound On</button>--></div>                        
+
+<script>
+         var musicOn = true;
+
+function togglesound()
+{
+var musicNode = document.getElementById('music');
+               var mStatus = 'Sound On';
+
+          if (musicNode.getElementsByTagName('button')[0].innerHTML == 'Sound On') {
+                    musicOn = false;
+                    mStatus = 'Sound Off';
+                } else {
+                    musicOn = true;
+                    mStatus = 'Sound On';
+                }
+               musicNode.getElementsByTagName('button')[0].innerHTML = mStatus; 
+}
+</script>
+<audio autobuffer>
+<source src="" />
+</audio>
+<audio autobuffer>
+<source src="res/1.mp3" type="audio/mpeg">
+<source src="res/1.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/2.mp3" type="audio/mpeg">
+<source src="res/2.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/3.mp3" type="audio/mpeg">
+<source src="res/3.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/4.mp3" type="audio/mpeg">
+<source src="res/4.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/5.mp3" type="audio/mpeg">
+<source src="res/5.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/6.mp3" type="audio/mpeg">
+<source src="res/6.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/7.mp3" type="audio/mpeg">
+<source src="res/7.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/8.mp3" type="audio/mpeg">
+<source src="res/8.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/9.mp3" type="audio/mpeg">
+<source src="res/9.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/10.mp3" type="audio/mpeg">
+<source src="res/10.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/11.mp3" type="audio/mpeg">
+<source src="res/11.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/12.mp3" type="audio/mpeg">
+<source src="res/12.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer >
+<source src="res/13.mp3" type="audio/mpeg">
+<source src="res/13.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+<audio autobuffer>
+<source src="res/full.mp3" type="audio/mpeg">
+</audio>
+<script>
+var musicelements;
+musicelements = document.getElementsByTagName("audio");
+function playmantra(x)
+{
+for (i=0;i<=14;i++)
+   musicelements[i].pause();
+if ( musicOn)
+ { 
+ musicelements[x].currentTime=0;
+ musicelements[x].play();
+ }
+//else alert('soundoff'+x);
+}
+</script>
+			<div class="myslider ">
+			<br>
+<button onclick="playmantra(14)" id="play14" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+			<strong>ॐ ध्येय सदा सवितृ मण्डलमध्यवर्ति, नारायण सरसिज़ासनसन्निविष्ट । <br>
+केयूरवान मकर कुण्डलवानकिरीटी, हारी हिरण्मय वपूर्धृत शंख चक्र ॥ </strong>
+<br><br>
+dhyeya sadaa savitRRi maNDalamadhyavarti, naaraayaNa sarasiज़्aasanasanniviShTa | <br>
+keyuuravaana makara kuNDalavaanakiriiTii, haarii hiraNmaya vapuurdhRRita shaMkha chakra ||
+<br>
+
+			<ol class="mysnu">
+		<li>
+			om mitrāya namah (ॐ मित्राय नमः) <button onclick="playmantra(1)" id="play1" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om ravaye namah (ॐ रवये नमः) <button onclick="playmantra(2)" id="play2" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om sūryāya namah (ॐ सूर्याय नमः) <button onclick="playmantra(3)" id="play3" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om bhānave namah (ॐ भानवे नमः) <button onclick="playmantra(4)" id="play4" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om khagāya namah (ॐ खगाय नमः) <button onclick="playmantra(5)" id="play5" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om pushne namah (ॐ पूष्णे नमः) <button onclick="playmantra(6)" id="play6" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om hiranya garbhāya namah (ॐ हिरण्यगर्भाय नमः) <button onclick="playmantra(7)" id="play7" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om marīcaye namah (ॐ मरीचये नमः) <button onclick="playmantra(8)" id="play8" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om ādityāya namah (ॐ आदित्याय नमः) <button onclick="playmantra(9)" id="play9" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om savitre namah (ॐ सवित्रे नमः) <button onclick="playmantra(10)" id="play10" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om arkāya namah (ॐ अर्काय नमः) <button onclick="playmantra(11)" id="play11" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		<li>
+			om bhāskarāya namah (ॐ भास्कराय नमः) <button onclick="playmantra(12)" id="play12" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		</li>
+		</ol>
+		om śrīsavitrasūryanārāyaṇāya namaḥ (ॐ श्रीसवित्रसूर्यनारायणाय नमः) <button onclick="playmantra(13)" id="play13" class="ui-btn ui-icon-audio ui-btn-inline ui-btn-icon-notext ui-shadow ui-corner-all ui-mini">audio</button>
+		<br>
+		<br>
+		<strong>॥ आदित्यस्य नमस्कारन् ये कुर्वन्ति दिने दिने
+		<br>
+आयुः प्रज्ञा बलम् वीर्यम् तेजस्तेशान् च जायते ॥ </strong>
+<br><br>
+|| aadityasya namaskaaran ye kurvanti dine dine<br>
+aayuH praj~naa balam viiryam tejasteshaan cha jaayate ||
+	</div>
+		</div>
+		<!-- 
+		<div data-role="footer">
+		</div> 
+		-->	</div>
+	
+	
+		<div data-role="page" id="poses">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar" data-icon-plus>
+				<ul>
+					<li>
+					<a href="#mantras" data-transition="slide" data-direction="reverse">Mantras</a>
+					</li>
+					<li>
+					<a href="#" class="ui-btn-active ui-state-persist">Poses</a>
+					</li>
+					<li>
+					<a href="#entry" data-transition="slide">Record Today's Count</a>
+					</li>
+					<li>
+					<a href="#history" data-transition="slide">My Counts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div data-role="main" class="ui-main">
+			<h2>Poses ... Scroll to see all steps</h2>
+
+<div id="slider">
+	<ul class="snu">
+		<li class="snli" >
+			<p class="snp">1. <b>Exhale</b> while you stand erect with hands folded as in a prayer position. <img src="img/01.jpg"></img></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">2. <b>Inhale</b> as you raise your arms over your head and bend backward <img src="img/02.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">3. <b>Exhale</b> as you bend forward to touch the floor with your hands (without bending at knees)<img src="img/03.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">4. <b>Inhale</b> as you send first foot backward and keep the other foot to a lunge position <img src="img/04.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">5. <b>Hold your breadth</b> as your move your other leg backward and place it next to the first one<img src="img/05.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">6. <b>Exhale</b> as you lower your body down and rest on your hands. Keep both feet together. Stomach & knees are off the floor. Hands, chin and toes touch the floor.<img src="img/06.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">7. <b>Inhale</b> as you push the body forward and raise head, shoulder & chest.<img src="img/07.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">8. <b>Exhale</b> as you raise your body and hips. Heels & palms should be flat on the floor.<img src="img/08.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">9. <b>Inhale</b> as you place your first foot between the arms with other foot extended backward<img src="img/09.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">10. <b>Exhale</b> as you bend forward to touch the floor with your hands (without bending at knees) <img src="img/10.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">11. <b>Inhale</b> as you raise your arms over your head and bend backward<img src="img/11.jpg"></p>
+		</li>
+		<li class="snli" >
+			<p class="snp">12. <b>Exhale</b> while you stand erect with hands folded as in a prayer position. <img src="img/01.jpg"><br></p>
+		</li>
+	</ul>
+
+</div> <!-- End #slider -->
+
+		</div>
+		
+				<!-- 
+		<div data-role="footer">
+		</div> 
+		-->
+		</div>
+
+	<div data-role="page" id="entry">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar" data-icon-plus>
+				<ul>
+					<li>
+					<a href="#mantras" data-transition="slide" data-direction="reverse">Mantras</a>
+					</li>
+					<li>
+					<a href="#poses" data-transition="slide" data-direction="reverse">Poses</a>
+					</li>
+					<li>
+					<a href="#" class="ui-btn-active ui-state-persist">Record Today's Count</a>
+					</li>
+					<li>
+					<a href="#history" data-transition="slide">My Counts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div data-role="main" class="ui-main">
+		
+		<h1>Record Today's Count</h1>
+<div class="myslider">
+   <fieldset class="ui-grid-b">
+  <div class="ui-block-a" style="text-align:center;">
+
+<button class="ui-btn ui-shadow ui-corner-all ui-icon-minus ui-btn-icon-notext ui-btn-inline" onclick="if (parseInt(document.getElementById('snum').value)>0) document.getElementById('snum').value=parseInt(document.getElementById('snum').value)-1">minus</button></div>
+<div class="ui-block-b">
+<input name="number" pattern="[0-9]*" id="snum" value="0" type="number" min="0">
+</div>
+<div class="ui-block-c" style="text-align:center;">
+<button class="ui-btn ui-shadow ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline" onclick="document.getElementById('snum').value=parseInt(document.getElementById('snum').value)+1" style="text-align:center;">plus</button>
+</div>
+
+</fieldset>
+<br>
+<br>
+<button type="submit" class="ui-btn ui-shadow ui-corner-all ui-icon-check ui-btn-icon-top" id="submit" value="Submit">Save</button>
+</div>
+		</div>
+		
+		<!-- 
+		<div data-role="footer">
+		</div> 
+		-->
+	</div>
+	
+	<div data-role="page" id="history">
+		<div data-role="header" data-position="fixed">
+			<div data-role="navbar" data-icon-plus>
+				<ul>
+					<li>
+					<a href="#mantras" data-transition="slide" data-direction="reverse">Mantras</a>
+					</li>
+					<li>
+					<a href="#poses" data-transition="slide" data-direction="reverse">Poses</a>
+					</li>
+					<li>
+					<a href="#entry" data-transition="slide" data-direction="reverse">Record Today's Count</a>
+					</li>
+					<li>
+					<a href="#" class="ui-btn-active ui-state-persist">My Counts</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		<div data-role="main" class="ui-main">
+			<h1 id="histh1">History</h1>
+			<div class="myslider">
+			<p id="hist"></p>
+			<br>
+			
+			</div>
+		</div>
+		 
+		<div data-role="footer">
+		    Find out more about Surya Namaskar Yogathon <a href="http://www.hssus.org/sny/">here</a>
+		</div> 
+		
+	</div>
+	
+    </body>
+</html>
