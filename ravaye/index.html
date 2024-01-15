@@ -24,7 +24,7 @@ $(document).on("pageshow","#history",function(){
 if (key.indexOf("sny24")==0)
 {
 	   count = localStorage.getItem(key);
-	   hist = hist + "Count on " + key + " : " + count + "<br>";
+	   hist = hist + "Count on " + key.substr(6) + " : " + count + "<br>";
 
 	   if (!isNaN(count))
 	   total = total + parseInt(count);
