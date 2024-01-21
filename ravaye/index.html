@@ -16,6 +16,7 @@
 	<script>
 $(document).on("pageshow","#history",function(){
       var hist="";
+	  var countarr=[];
 	  var total=0;count=0;
 	  $("#hist").html(hist);
 	  for (i = 0; i <localStorage.length; i++)
@@ -23,12 +24,20 @@ $(document).on("pageshow","#history",function(){
 	   key = localStorage.key(i);
 if (key.indexOf("sny24")==0)
 {
+countarr.push(key);
+	  }
+}
+countarr.sort();
+for (i = 0; i <countarr.length; i++)
+	  {
+	   key=countarr[i];
+
 	   count = localStorage.getItem(key);
 	   hist = hist + "Count on " + key.substr(6) + " : " + count + "<br>";
 
 	   if (!isNaN(count))
 	   total = total + parseInt(count);
-	  }
+	  
 }
 	  $("#hist").append(hist);
 	  $("#histh1").html("<h3>SNY24 count so far : <b>"+total+"</b></h3>");
