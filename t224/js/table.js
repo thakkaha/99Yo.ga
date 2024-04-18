@@ -26,9 +26,9 @@ mydata = mydata.sort(function(a, b) { return (new Date(a.startdate)) - (new Date
   $('#' + formattedDate(today)).removeClass('no-event').addClass('today')
   addMonthMenu()
   
-$("div.event:contains('ब्रह्मा')").css("background-color","#fed");
-$("div.event:contains('विष्णु')").css("background-color","#ede");
-$("div.event:contains('महेश')").css("background-color","#aef");
+$("div.event:contains('सूर्य')").css("background-color","#fed");
+$("div.event:contains('चन्द्र')").css("background-color","#ede");
+
 }
 
 function addMonthMenu() {
