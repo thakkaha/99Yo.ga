@@ -10,7 +10,7 @@ var today  = new Date()
 }
 else
 {
-var today = new Date(2024,05,31,00,00,00);
+var today = new Date(2024,08,31,00,00,00);
 }
 var months = []
 
