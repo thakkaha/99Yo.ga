@@ -3,14 +3,14 @@ var weekdays   = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Satur
 weekdays = ["सोमवासरः", "मङ्गलवासरः", "बुधवासरः", "गुरुवासरः", "शुक्रवासरः", "शनिवासरः", "रविवासरः"]
 var symbols = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९','१०', '११', '१२', '१३', '१४', '१५', '१६', '१७', '१८', '१९','२०', '२१', '२२', '२३', '२४', '२५', '२६', '२७', '२८', '२९','३०','३१'];
 const urlParams = new URLSearchParams(window.location.search);
-var o = urlParams.get('csc');
+var o = urlParams.get('oks');
 if (o!="aam")
 {
 var today  = new Date()
 }
 else
 {
-var today = new Date(2024,08,31,00,00,00);
+var today = new Date(2024,08,21,00,00,00);
 }
 var months = []
 
