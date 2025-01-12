@@ -10,7 +10,7 @@ var today  = new Date()
 }
 else
 {
-var today = new Date(2025,04,30,00,00,00);
+var today = new Date(2026,01,01,00,00,00);
 }
 var months = []
 
@@ -26,8 +26,11 @@ mydata = mydata.sort(function(a, b) { return (new Date(a.startdate)) - (new Date
   $('#' + formattedDate(today)).removeClass('no-event').addClass('today')
   addMonthMenu()
   
-$("div.event:contains('देवी')").css("background-color","#fed");
-$("div.event:contains('ईश्वरी')").css("background-color","#ede");
+$("div.event:contains('नवमी')").css("background-color","#fed");
+$("div.event:contains('एकादशी')").css("background-color","#eee");
+$("div.event:contains('पूर्णिमा')").css("background-color","#def");
+$("div.event:contains('कृष्ण')").css("border","solid 2px black");
+
 
 }
 
@@ -62,18 +65,18 @@ function appendEvent( event ) {
   {
 	  if( o == "aam")
   {
-	  var eventElement   = $('<div class="event pastd oks"><a target="t124" href="' + event.tickets + event.location + '">' + event.name + " - " + event.time + '</a></div>');
+	  var eventElement   = $('<div class="event pastd oks"><a target="pr2025" href="' + event.tickets + event.location + '">' + event.name + event.time + '</a></div>');
 	    $('#' + formattedDate(eventStartDate)).removeClass('no-event').append(eventElement)
   }
   }
     else {
 	if (eventStartDate < today)
 	{
-	  var eventElement = $('<div class="event pastd"><a target="t124" href="' + event.tickets + event.location + '">' + event.name + " - " + event.time + '</a></div>')
+	  var eventElement = $('<div class="event pastd"><a target="pr2025" href="' + event.tickets + event.location + '">' + event.name + event.time + '</a></div>')
 	}
 	  else
 	  {
-		var eventElement = $('<div class="event">' + event.name + " - " + event.time + '</div>')
+		var eventElement = $('<div class="event">' + event.name + event.time + '</div>')
 	  }
 	}
   // Handle multi-days
