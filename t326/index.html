@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>संस्कृतम् Sep-Dec 2026</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	 <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+    <script type="text/javascript" src="js/tabletop1.3.4.js"></script>
+    <script type="text/javascript" src='js/sheetsee.js'></script>
+    <script type="text/javascript" src='js/table.js'></script>
+    <script type="text/javascript" src='js/leaflet.markercluster.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <h1>SB Canada <span style="color:Tomato">संस्कृतम् </span><a href="https://docs.google.com/document/d/e/2PACX-1vT0Fmqetuel2CEZ6s8dKmY96-URwKle7a92gFHbb9hfI6msNU7AsSSpkKuIGlm89Pj-Q47dW-TgavdY/pub"> 2026</a></h1><h3> email - yyz@samskritabharati.ca</h3>
+	<a class="mantra" href="d.png" style="float:left" target="mantra">ध्येय-मन्त्रः dhyeya-mantraH</a> <a class="mantra" style="float:right" href="s.png" target="mantra">शान्ति-मन्त्रः shaanti-mantraH</a>
+  <div id="calendar-goes-here"></div>
+    <script type="text/javascript">
+	    document.addEventListener('DOMContentLoaded', function() {
+    var lnk = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ5nFCITq2Mb50pDv2Gz_CDcnmI0-lGSSnV84n4KY2iiTo1p0sdfJWzXVX3aFqSgB-T-LLutAopUMRl/pub?gid=0&single=true&output=csv";
+	  Papa.parse(lnk, {
+          download: true,
+          header: true,
+          complete: generateCalendar
+		  })
+    })
+  </script>
+<script>
+$(document).ready(function() {
+$("h2").css("display","block");
+$("table").css("display","table");
+$("#cal-controls").css("display","none");   
+});
+      // Add Sanskrit day names to mobile view
+      function addDayNames() {
+        if (window.innerWidth <= 768) {
+          // Sanskrit day names matching the header order
+          const dayNames = [
+            "सोमवासरः", // Monday (Mon)
+            "मङ्गलवासरः", // Tuesday (Tue)
+            "बुधवासरः", // Wednesday (Wed)
+            "गुरुवासरः", // Thursday (Thu)
+            "शुक्रवासरः", // Friday (Fri)
+            "शनिवासरः", // Saturday (Sat)
+            "रविवासरः", // Sunday (Sun)
+          ];
+
+          const rows = document.querySelectorAll(".days");
+
+          rows.forEach((row) => {
+            const cells = row.querySelectorAll("td");
+            cells.forEach((cell, index) => {
+              const dayNumber = cell.querySelector(".day");
+              if (dayNumber && dayNumber.textContent.trim()) {
+                const sanskritDay = dayNames[index % 7];
+                const date = dayNumber.textContent.trim();
+                cell.setAttribute("data-day-name", `${sanskritDay} - ${date}`);
+              }
+            });
+          });
+        }
+      }
+
+      // Run on load and resize
+      window.addEventListener("load", addDayNames);
+      window.addEventListener("resize", addDayNames);
+</script>
+</body>
+</html>
